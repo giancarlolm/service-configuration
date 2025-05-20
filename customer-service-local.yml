@@ -1,6 +1,6 @@
 spring:
   application:
-    name: product-service
+    name: customer-service
 
 server:
   port: 8079
