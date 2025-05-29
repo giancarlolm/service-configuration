@@ -3,9 +3,13 @@ spring:
     name: product-service
 
 server:
-  port: 8075
+  port: ${PORT:0}
 
 eureka:
+  instance:
+    refer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}:${random.int(1000,9999)}
   client:
     service-url:
+      prefer-ip-address: true
       defaultZone: http://localhost:8761/eureka
